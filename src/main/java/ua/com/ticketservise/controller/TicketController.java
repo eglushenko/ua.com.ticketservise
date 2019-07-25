@@ -28,7 +28,7 @@ class TicketController {
     }
 
     @PostMapping(value = "/ticket", produces = "application/json")
-    public ResponseEntity<Long> newEmployee(@RequestParam String departure,
+    public ResponseEntity<Long> newTicket(@RequestParam String departure,
                                               @RequestParam(name = "date") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date,
                                               @RequestParam  LocalTime time
     ) {
@@ -57,7 +57,7 @@ class TicketController {
 
 
     @GetMapping(value = "/ticket/{id}",produces = "application/json")
-    public String one(@PathVariable Long id) {
+    public String oneTicketStatus(@PathVariable Long id) {
         String statusString = null;
 
         Boolean status = repository.findById(id).get().getPayStatus();

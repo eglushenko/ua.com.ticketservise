@@ -25,7 +25,6 @@ public class ScheduledTasks {
 
 
     public void performTaskUsingCron() throws Exception {
-        System.out.println("Regular task performed using Cron at  1 minute");
         try {
             List <Ticket> tk = ticketRepo.findAllByPayStatusIsNull();
             System.out.println(tk.size());
